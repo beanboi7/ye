@@ -15,3 +15,4 @@
 - Open your terminal and run the `go get github.com/beanboi7/ye` command in a convenient directory.
 - Type the root word followed by the command; baggage obtained.
 
+> PS: you need go installed in your localhost to run this
