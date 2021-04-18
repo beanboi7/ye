@@ -35,6 +35,14 @@ var raNdomCmd = &cobra.Command{
 	},
 }
 
+func init() {
+	rootCmd.AddCommand(raNdomCmd)
+}
+
+type Quote struct {
+	Kanye string `json:"quote"`
+}
+
 func getQuote() {
 	apiUrl := "https://api.kanye.rest"
 	quoteStore := Quote{}
@@ -56,11 +64,9 @@ func quoteData(api string) []byte {
 	}
 	req.Header.Add("Accept", "json/string")
 
-	//after passing the requests, we get the responses
-
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal("Response not sent", err)
+		log.Fatal("Response not obtained", err)
 	}
 	responseBody, err := ioutil.ReadAll(res.Body)
 	if err != nil {
@@ -69,12 +75,4 @@ func quoteData(api string) []byte {
 	//fmt.Println("the type of the response body: ", reflect.TypeOf(responseBody))
 	return responseBody
 
-}
-
-func init() {
-	rootCmd.AddCommand(raNdomCmd)
-}
-
-type Quote struct {
-	Kanye string `json:"quote"`
 }
