@@ -27,3 +27,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
 ```
+
+#### To contribute to the code/ fix any issues make a pull request.
+
+#### This CLI was made possible thanks to the API made by [Andrew Jazbec](https://github.com/ajzbc/kanye.rest).
